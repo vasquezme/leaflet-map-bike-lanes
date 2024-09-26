@@ -32,98 +32,6 @@
     scrollWheelZoom: false
   });
     
-  var places = {
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium",
-        "marker-symbol": "",
-        "name": "Tallinn",
-        "size": 159
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.7357177734375,
-          59.43390314475794
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium",
-        "marker-symbol": "",
-        "name": "Haapsalu",
-        "size": 11
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          23.543701171875,
-          58.945758027716465
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium",
-        "marker-symbol": "",
-        "name": "Parnu",
-        "size": 32
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          24.510498046875,
-          58.38011855064708
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "marker-color": "#7e7e7e",
-        "marker-size": "medium",
-        "marker-symbol": "",
-        "name": "Tartu",
-        "size": 39
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          26.728363037109375,
-          58.37147760096145
-        ]
-      }
-    }
-  ]
-};
-
-
-    
-  /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
-  L.tileLayer(
-    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { // https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
-      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-  }).addTo(map);
-
-  /* Display a point marker with pop-up text */
-  L.marker([43.64, -79.38]).addTo(map) // EDIT marker coordinates
-  .bindPopup("Toronto"); // EDIT pop-up text message
-    L.marker([43.6683, -79.3945]).addTo(map)
-  .bindPopup("Royal Ontario Museum"); //43.6683792380287, -79.39454964092549
-    L.marker([43.665, -79.303]).addTo(map)
-  .bindPopup("Toronto Beach"); -79.30
-    L.marker([43.631, -79.472]).addTo(map)
-  .bindPopup("Toronto Waterfront"); //43.631606802378116, -79.47277170003382
-
     var places = {
   "type": "FeatureCollection",
   "features": [
@@ -199,6 +107,23 @@
 };
 
     var placesLeaflet = L.geoJson(places).addTo(map);
+
+    
+  /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
+  L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { // https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+  }).addTo(map);
+
+  /* Display a point marker with pop-up text */
+  L.marker([43.64, -79.38]).addTo(map) // EDIT marker coordinates
+  .bindPopup("Toronto"); // EDIT pop-up text message
+    L.marker([43.6683, -79.3945]).addTo(map)
+  .bindPopup("Royal Ontario Museum"); //43.6683792380287, -79.39454964092549
+    L.marker([43.665, -79.303]).addTo(map)
+  .bindPopup("Toronto Beach"); -79.30
+    L.marker([43.631, -79.472]).addTo(map)
+  .bindPopup("Toronto Waterfront"); //43.631606802378116, -79.47277170003382
 
     
   </script>
