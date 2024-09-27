@@ -113,6 +113,10 @@ var geojsonFeature = {
 };
 
 L.geoJSON(geojsonFeature).addTo(map);
+
+var myLayer = L.geoJSON().addTo(map);
+myLayer.addData(geojsonFeature);
+    
     
   /* Display a point marker with pop-up text */
   L.marker([43.64, -79.38]).addTo(map) // EDIT marker coordinates
