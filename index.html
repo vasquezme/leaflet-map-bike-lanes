@@ -34,19 +34,7 @@
 
 var myLayer = L.geoJSON().addTo(map);
 myLayer.addData(geojsonFeature);
-    
-  var geojsonFeature = {
-      "type": "Feature",
-      "properties": {
-          "name": "Coors Field",
-          "amenity": "Baseball Stadium",
-          "popupContent": "This is where the Rockies play!"
-      },
-      "geometry": {
-          "type": "Point",
-          "coordinates": [-104.99404, 39.75621]
-      }
-  };
+  
     
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
   L.tileLayer(
