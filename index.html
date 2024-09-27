@@ -69,18 +69,18 @@ L.geoJSON(someFeatures, {
 var myLayer = L.geoJSON().addTo(map);
 myLayer.addData(geojsonFeature);
     
-var geojsonFeature = {
-    "type": "Feature",
-    "properties": {
-        "name": "Coors Field",
-        "amenity": "Baseball Stadium",
-        "popupContent": "This is where the Rockies play!"
-    },
-    "geometry": {
-        "type": "Point",
-        "coordinates": [-104.99404, 39.75621]
-    }
-};
+  var geojsonFeature = {
+      "type": "Feature",
+      "properties": {
+          "name": "Coors Field",
+          "amenity": "Baseball Stadium",
+          "popupContent": "This is where the Rockies play!"
+      },
+      "geometry": {
+          "type": "Point",
+          "coordinates": [-104.99404, 39.75621]
+      }
+  };
 
   /* Display a point marker with pop-up text */
   L.marker([43.64, -79.38]).addTo(map) // EDIT marker coordinates
