@@ -39,80 +39,33 @@
   }).addTo(map);
 
   var geojsonFeature = {
-    "type": "FeatureCollection",
-    "features": [
-      {
-        "type": "Feature",
-        "properties": {
-          "marker-color": "#7e7e7e",
-          "marker-size": "medium",
-          "marker-symbol": "",
-          "name": "Tallinn",
-          "size": 159
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            24.7357177734375,
-            59.43390314475794
-          ]
-        }
+  var geojsonFeature = [{
+      "type": "Feature",
+      "properties": {
+          "name": "Coors Field",
+          "show_on_map": true
       },
-      {
-        "type": "Feature",
-        "properties": {
-          "marker-color": "#7e7e7e",
-          "marker-size": "medium",
-          "marker-symbol": "",
-          "name": "Haapsalu",
-          "size": 11
-        },
-        "geometry": {
+      "geometry": {
           "type": "Point",
-          "coordinates": [
-            23.543701171875,
-            58.945758027716465
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "marker-color": "#7e7e7e",
-          "marker-size": "medium",
-          "marker-symbol": "",
-          "name": "Parnu",
-          "size": 32
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            24.510498046875,
-            58.38011855064708
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "marker-color": "#7e7e7e",
-          "marker-size": "medium",
-          "marker-symbol": "",
-          "name": "Tartu",
-          "size": 39
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            26.728363037109375,
-            58.37147760096145
-          ]
-        }
+          "coordinates": [-104.99404, 39.75621]
       }
-    ]
-  };
+  }, {
+      "type": "Feature",
+      "properties": {
+          "name": "Busch Field",
+          "show_on_map": false
+      },
+      "geometry": {
+          "type": "Point",
+          "coordinates": [-104.98404, 39.74621]
+      }
+  }];
 
-L.geoJSON(geojsonFeature).addTo(map);
+L.geoJSON(someFeatures, {
+    filter: function(feature, layer) {
+        return feature.properties.show_on_map;
+    }
+}).addTo(map);
 
 var myLayer = L.geoJSON().addTo(map);
 myLayer.addData(geojsonFeature);
