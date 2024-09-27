@@ -19,12 +19,12 @@
 <body>
 
   <!-- Display the map and title with HTML division tags  -->
-  <div id="map-title">Mauricio's Bike Map</div>
+  <div id="map-title">Mauricio's Practice Map</div>
   <div id="map"></div>
 
   <!-- Create the interactive map content with JavaScript (.js) -->
   <script>
-    
+
   /* Set up the initial map center and zoom level */
   var map = L.map('map', {
     center: [43.64, -79.38], // EDIT coordinates to re-center map 43.64159021479595, -79.38793608540173
@@ -32,22 +32,67 @@
     scrollWheelZoom: false
   });
 
-var myLayer = L.geoJSON().addTo(map);
-myLayer.addData(geojsonFeature);
-  
-    
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
   L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { // https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
       attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
   }).addTo(map);
 
+    var plants = {
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "properties":{
+                "code":2,
+                "plant_name":"Bankhead Dam",
+                "capacity_mw":56,
+                "fuel_source":{
+                    "Hydro":56
+                }
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[-87.35682,33.45867]
+            }
+        },{
+            "type":"Feature",
+            "properties":{
+                "code":3,
+                "plant_name":"Barry",
+                "capacity_mw":2574.5,
+                "fuel_source":{
+                    "Coal":1612.5,
+                    "Natural Gas":962
+                }
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[-88.0103,31.0069]
+            }
+        },{
+            "type":"Feature",
+            "properties":{
+                "code":4,
+                "plant_name":"Walter Bouldin Dam",
+                "capacity_mw":225.9,
+                "fuel_source":{
+                    "Hydro":225.9
+                }
+            },
+            "geometry":{
+                "type":"Point",
+                "coordinates":[-86.28306,32.58389]
+            }
+        }, …
 
   /* Display a point marker with pop-up text */
   L.marker([43.64, -79.38]).addTo(map) // EDIT marker coordinates
   .bindPopup("Toronto"); // EDIT pop-up text message
 
 
+
+    
   </script>
 </body>
 </html>
